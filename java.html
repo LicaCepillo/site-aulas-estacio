@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Incorporando Javascript em Páginas HTML</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Incorporando um arquivo .js externo-->
+        <!--<script src="script.js"></script>-->
+    </head>
+    <body>
+        <div id="exibe_resultado">Resultado da Multiplicação </div>
+    </body>
+       
+        <!--Incorporando códigos JavaScript diretamente na página-->
+        <script type="text/javascript">
+        //Com duas barras criamos comentários de linha em JavaScript
+        //Comentários de mais de uma linha pode ser feito dentro do /* */
+
+        var variavel; // declarnado uma variavel cujo o nome é 'variavel'
+
+        variavel = 3+3 ; //Atribuindo valores e apricando uma operação matemática em variável
+    
+        var resultadoMultiplicacao = multiplique (10,50); //chamando a função 'multiplique' passando dois valores - 10 e 50
+        //Manipulando a árvore DOM a fim de exibir, dentro da DIV declarada no HTML, o resultado da multiplicação juntamente com o seu texto inicial
+        var divLocal = document.getElementByID ('exibe_resultado');
+        /* Neste ponto a variavel divLocal é um objeto que representa a div declarada do HTML. Sendo um objeto é possível acessar seus atributos com innerHTML, precedido do nome do objeto seguido de um '.' */
+        divLocal.innerHTML += resultadoMultiplicacao;
+        //Definição da função 'multiplique'  que recebe dois parâmetros - numero1 e numero2
+        function multiplique(numero1, numero2) {
+        /*
+        Declarando uma nova variável qaue guardará o resultado da operação de multiplicação; Iniciando a variável com o valor de 0.
+        */
+        var resultado = 0;
+        
+        //Atribuindo à variável 'resultado' o valor resultante da multiplicação dos 2 parâmetros recebidos
+        resultado = numero1 * numero2
+        //Retornando (devolvento) o valor da variável resultado
+        return resultado;
+        }
+    </script> 
+</html>
